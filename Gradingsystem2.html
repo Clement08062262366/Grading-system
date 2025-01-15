@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRADING SYSTEM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: darkgray;
+            width: 80%;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            color: white;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            margin-bottom: 20px;
+        }
+
+        .input-field input {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+
+        .input-field input[type="number"]::-webkit-inner-spin-button, 
+        .input-field input[type="number"]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+
+        .button {
+            margin: 0 auto;
+            display: block;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            background-color: darkgoldenrod;
+            color: white;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: goldenrod;
+        }
+
+        .result {
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>GRADING SYSTEM</h2>
+        <div class="input-field">
+            <input type="number" id="grade" placeholder="Input your score here">
+        </div>
+        <button class="button" onclick="check()">Check</button>
+        <p class="result" id="result">See your Grade</p>
+    </div>
+    <script>
+
+        function check() {
+            let score = grade.value
+            if (score >= 0 && score < 40) {
+                document.getElementById('result').innerHTML = '<p style="color: red;">Bad result, You failed</p>'
+            }
+            else if (score >= 40 && score < 46) {
+                document.getElementById('result').innerHTML = '<p style="color: yellow;">Not Good enough, E </p>'
+            }
+            else if (score >= 46 && score < 51) {
+                document.getElementById('result').innerHTML = '<p style="color: black;">You can do better, D</p>'
+            }
+            else if (score >= 51 && score < 61) {
+                document.getElementById('result').innerHTML = '<p style="color: black;">Fair, C </p>'
+            }
+            else if (score >= 61 && score < 70) {
+                document.getElementById('result').innerHTML = '<p style="color: blue;">Good, B </p>'
+            }
+            else if (score >= 70 && score < 100) {
+                document.getElementById('result').innerHTML = '<p style="color: green;">Excellent, A</p>'
+            }
+            else {
+                document.getElementById('result').innerHTML = '<p style="color: red;">Invalid Score</p>'
+            }
+        }
+    </script>
+</body>
+
+</html>
